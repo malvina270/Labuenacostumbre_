@@ -103,6 +103,12 @@ header h1 {
   background: #fffdf9;
   padding: 10px;
   border: 1px solid #e8ded1;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.producto:active {
+  transform: scale(0.98);
 }
 
 .foto {
@@ -132,6 +138,80 @@ header h1 {
   font-size: 16px;
   font-weight: bold;
   margin-top: 7px;
+}
+
+/* VENTANA DE PRODUCTO */
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  inset: 0;
+  background: rgba(35, 26, 19, 0.85);
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.modal.activo {
+  display: flex;
+}
+
+.modal-contenido {
+  background: #f7f3ed;
+  width: 100%;
+  max-width: 480px;
+  padding: 15px;
+  position: relative;
+  text-align: center;
+  animation: aparecer 0.25s ease;
+}
+
+.modal-imagen {
+  width: 100%;
+  max-height: 65vh;
+  object-fit: contain;
+  display: block;
+  background: #eee4d6;
+}
+
+.modal h2 {
+  font-size: 21px;
+  font-weight: normal;
+  margin-top: 17px;
+  line-height: 1.4;
+}
+
+.modal .precio {
+  font-size: 21px;
+  margin-top: 8px;
+  margin-bottom: 8px;
+}
+
+.cerrar {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  width: 35px;
+  height: 35px;
+  border: none;
+  border-radius: 50%;
+  background: #70523c;
+  color: white;
+  font-size: 23px;
+  cursor: pointer;
+  z-index: 2;
+}
+
+@keyframes aparecer {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
 }
 
 .contacto {
@@ -216,7 +296,7 @@ footer {
 
   <div class="productos">
 
-    <article class="producto">
+    <article class="producto" onclick="abrirProducto(this)">
       <div class="foto">
         <img src="bocachata.jpg.HEIC" alt="Mate boca chata de acero">
       </div>
@@ -224,7 +304,7 @@ footer {
       <p class="precio">$ 590</p>
     </article>
 
-    <article class="producto">
+    <article class="producto" onclick="abrirProducto(this)">
       <div class="foto">
         <img src="camionero.jpg.HEIC" alt="Mate camionero">
       </div>
@@ -232,7 +312,7 @@ footer {
       <p class="precio">$ 390</p>
     </article>
 
-    <article class="producto">
+    <article class="producto" onclick="abrirProducto(this)">
       <div class="foto">
         <img src="imperial.jpg.HEIC" alt="Mate imperial boca de acero lisa">
       </div>
@@ -240,7 +320,7 @@ footer {
       <p class="precio">$ 990</p>
     </article>
 
-    <article class="producto">
+    <article class="producto" onclick="abrirProducto(this)">
       <div class="foto">
         <img src="tabla.jpg.HEIC" alt="Set de tabla">
       </div>
@@ -248,7 +328,7 @@ footer {
       <p class="precio">$ 1.190</p>
     </article>
 
-    <article class="producto">
+    <article class="producto" onclick="abrirProducto(this)">
       <div class="foto">
         <img src="termo.jpg.HEIC" alt="Termo">
       </div>
@@ -256,7 +336,7 @@ footer {
       <p class="precio">$ 990</p>
     </article>
 
-    <article class="producto">
+    <article class="producto" onclick="abrirProducto(this)">
       <div class="foto">
         <img src="liso.jpg.jpg" alt="Posa mate liso">
       </div>
@@ -264,7 +344,7 @@ footer {
       <p class="precio">$ 290</p>
     </article>
 
-    <article class="producto">
+    <article class="producto" onclick="abrirProducto(this)">
       <div class="foto">
         <img src="costura.jpg.jpg" alt="Posa mate con costura">
       </div>
@@ -272,7 +352,7 @@ footer {
       <p class="precio">$ 495</p>
     </article>
 
-    <article class="producto">
+    <article class="producto" onclick="abrirProducto(this)">
       <div class="foto">
         <img src="bombilla.jpg.WEBP" alt="Bombillón de alpaca">
       </div>
@@ -282,6 +362,17 @@ footer {
 
   </div>
 </main>
+
+<!-- VENTANA PARA VER EL PRODUCTO -->
+
+<div class="modal" id="modal" onclick="cerrarProducto(event)">
+  <div class="modal-contenido">
+    <button class="cerrar" onclick="cerrarProducto(event)" aria-label="Cerrar">×</button>
+    <img class="modal-imagen" id="imagenGrande" src="" alt="">
+    <h2 id="nombreGrande"></h2>
+    <p class="precio" id="precioGrande"></p>
+  </div>
+</div>
 
 <section class="contacto">
   <h2>¿Te gustó algún producto?</h2>
@@ -305,6 +396,39 @@ footer {
   <p>Las buenas costumbres se comparten.</p>
   <p>@labuenacostumbre_</p>
 </footer>
+
+<script>
+function abrirProducto(producto) {
+  const imagen = producto.querySelector("img");
+  const nombre = producto.querySelector("h3");
+  const precio = producto.querySelector(".precio");
+
+  document.getElementById("imagenGrande").src = imagen.src;
+  document.getElementById("imagenGrande").alt = imagen.alt;
+  document.getElementById("nombreGrande").textContent = nombre.textContent;
+  document.getElementById("precioGrande").textContent = precio.textContent;
+
+  document.getElementById("modal").classList.add("activo");
+  document.body.style.overflow = "hidden";
+}
+
+function cerrarProducto(event) {
+  if (
+    event.target.id === "modal" ||
+    event.target.classList.contains("cerrar")
+  ) {
+    document.getElementById("modal").classList.remove("activo");
+    document.body.style.overflow = "";
+  }
+}
+
+document.addEventListener("keydown", function(event) {
+  if (event.key === "Escape") {
+    document.getElementById("modal").classList.remove("activo");
+    document.body.style.overflow = "";
+  }
+});
+</script>
 
 </body>
 </html>
