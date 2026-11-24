@@ -2,287 +2,309 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>La Buena Costumbre | Catálogo</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <meta name="description" content="Descubrí los productos de La Buena Costumbre.">
+<title>La Buena Costumbre | Catálogo</title>
+<meta name="description" content="Descubrí nuestros mates, termos y accesorios en La Buena Costumbre.">
 
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-    body {
-      font-family: Georgia, serif;
-      background: #f7f3ed;
-      color: #493525;
-    }
+body {
+  font-family: Georgia, serif;
+  background: #f7f3ed;
+  color: #493525;
+}
 
-    header {
-      text-align: center;
-      padding: 35px 15px 25px;
-      background: #eee4d6;
-    }
+header {
+  background: #eee4d6;
+  text-align: center;
+  padding: 30px 15px;
+}
 
-    .logo {
-      font-size: 35px;
-      font-weight: normal;
-      letter-spacing: 1px;
-    }
+.logo-img {
+  width: 145px;
+  max-height: 130px;
+  object-fit: contain;
+  margin-bottom: 10px;
+}
 
-    .subtitle {
-      font-size: 11px;
-      letter-spacing: 4px;
-      margin-top: 10px;
-      color: #876c54;
-    }
+header h1 {
+  font-size: 32px;
+  font-weight: normal;
+  letter-spacing: 1px;
+}
 
-    .instagram {
-      display: inline-block;
-      margin-top: 15px;
-      color: #795b43;
-      text-decoration: none;
-      font-size: 13px;
-    }
+.subtitle {
+  font-size: 10px;
+  letter-spacing: 4px;
+  margin-top: 10px;
+  color: #876c54;
+}
 
-    .hero {
-      text-align: center;
-      padding: 55px 20px;
-      background: #e5d8c6;
-    }
+.instagram {
+  display: inline-block;
+  margin-top: 15px;
+  text-decoration: none;
+  color: #795b43;
+  font-size: 13px;
+}
 
-    .hero h2 {
-      font-size: 29px;
-      font-weight: normal;
-      margin-bottom: 12px;
-    }
+.hero {
+  text-align: center;
+  padding: 55px 20px;
+  background: #e5d8c6;
+}
 
-    .hero p {
-      font-size: 14px;
-      color: #755b46;
-      line-height: 1.7;
-    }
+.hero h2 {
+  font-size: 29px;
+  font-weight: normal;
+  margin-bottom: 15px;
+}
 
-    .catalogo {
-      padding: 40px 18px;
-      max-width: 1050px;
-      margin: auto;
-    }
+.hero p {
+  font-size: 14px;
+  color: #755b46;
+  line-height: 1.8;
+}
 
-    .catalogo h2 {
-      text-align: center;
-      font-size: 27px;
-      font-weight: normal;
-      margin-bottom: 12px;
-    }
+.catalogo {
+  padding: 45px 18px;
+  max-width: 1100px;
+  margin: auto;
+}
 
-    .intro {
-      text-align: center;
-      font-size: 13px;
-      color: #8b7663;
-      margin-bottom: 30px;
-    }
+.catalogo h2 {
+  text-align: center;
+  font-size: 28px;
+  font-weight: normal;
+  margin-bottom: 10px;
+}
 
-    .productos {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 16px;
-    }
+.intro {
+  text-align: center;
+  color: #8b7663;
+  font-size: 13px;
+  margin-bottom: 30px;
+}
 
-    .producto {
-      background: #fffdf9;
-      padding: 10px;
-      border: 1px solid #e8ded1;
-    }
+.productos {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+}
 
-    .foto {
-      width: 100%;
-      aspect-ratio: 1 / 1;
-      background: #e9dfd2;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      overflow: hidden;
-    }
+.producto {
+  background: #fffdf9;
+  padding: 10px;
+  border: 1px solid #e8ded1;
+}
 
-    .foto img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
+.foto {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+  background: #e9dfd2;
+}
 
-    .sin-foto {
-      color: #a18a73;
-      font-size: 12px;
-    }
+.foto img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
 
-    .producto h3 {
-      font-size: 15px;
-      font-weight: normal;
-      margin-top: 13px;
-      min-height: 36px;
-      line-height: 1.4;
-    }
+.producto h3 {
+  font-size: 15px;
+  font-weight: normal;
+  margin-top: 13px;
+  line-height: 1.4;
+  min-height: 38px;
+}
 
-    .precio {
-      font-size: 13px;
-      color: #96775c;
-      margin-top: 5px;
-    }
+.precio {
+  color: #795b43;
+  font-size: 16px;
+  font-weight: bold;
+  margin-top: 7px;
+}
 
-    .contacto {
-      background: #e9dfd2;
-      text-align: center;
-      padding: 40px 20px;
-    }
+.contacto {
+  background: #e9dfd2;
+  text-align: center;
+  padding: 42px 20px;
+}
 
-    .contacto h2 {
-      font-size: 25px;
-      font-weight: normal;
-      margin-bottom: 12px;
-    }
+.contacto h2 {
+  font-size: 25px;
+  font-weight: normal;
+  margin-bottom: 12px;
+}
 
-    .contacto p {
-      font-size: 14px;
-      margin-bottom: 18px;
-    }
+.contacto p {
+  font-size: 14px;
+  margin-bottom: 22px;
+}
 
-    .contacto a {
-      display: inline-block;
-      color: #fff;
-      background: #70523c;
-      text-decoration: none;
-      padding: 12px 25px;
-      font-size: 13px;
-    }
+.botones {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 12px;
+}
 
-    footer {
-      text-align: center;
-      padding: 25px 10px;
-      font-size: 12px;
-      color: #8b7663;
-      line-height: 1.8;
-    }
+.botones a {
+  display: inline-block;
+  background: #70523c;
+  color: white;
+  text-decoration: none;
+  padding: 12px 24px;
+  font-size: 13px;
+}
 
-    @media (min-width: 700px) {
-      .productos {
-        grid-template-columns: repeat(3, 1fr);
-        gap: 22px;
-      }
+footer {
+  text-align: center;
+  padding: 27px 10px;
+  font-size: 12px;
+  color: #8b7663;
+  line-height: 1.9;
+}
 
-      .logo {
-        font-size: 43px;
-      }
+@media (min-width: 700px) {
+  .productos {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 22px;
+  }
 
-      .hero h2 {
-        font-size: 38px;
-      }
-    }
-  </style>
+  .hero h2 {
+    font-size: 38px;
+  }
+}
+</style>
 </head>
 
 <body>
 
-  <header>
-    <h1 class="logo">La Buena Costumbre</h1>
-    <p class="subtitle">TRADICIÓN QUE SE COMPARTE</p>
-    <a class="instagram"
-       href="https://www.instagram.com/labuenacostumbre_/"
-       target="_blank">
-      @labuenacostumbre_
-    </a>
-  </header>
+<header>
+  <img src="logo.jpg.PNG" alt="La Buena Costumbre" class="logo-img">
+  <h1>La Buena Costumbre</h1>
+  <p class="subtitle">TRADICIÓN QUE SE COMPARTE</p>
 
-  <section class="hero">
-    <h2>Hay costumbres que nunca pasan de moda.</h2>
-    <p>
-      Productos pensados para acompañar tus momentos
-      y compartir las buenas costumbres.
-    </p>
-  </section>
+  <a class="instagram"
+     href="https://www.instagram.com/labuenacostumbre_/"
+     target="_blank">
+    @labuenacostumbre_
+  </a>
+</header>
 
-  <main class="catalogo">
-    <h2>Nuestros productos</h2>
-    <p class="intro">Descubrí todo lo que tenemos para vos.</p>
+<section class="hero">
+  <h2>Hay costumbres que nunca pasan de moda.</h2>
+  <p>
+    Productos pensados para acompañar tus momentos
+    y compartir las buenas costumbres.
+  </p>
+</section>
 
-    <div class="productos">
+<main class="catalogo">
+  <h2>Nuestros productos</h2>
+  <p class="intro">Encontrá tu próximo compañero de ronda.</p>
 
-      <article class="producto">
-        <div class="foto">
-          <span class="sin-foto">Foto próximamente</span>
-        </div>
-        <h3>Bombillón de alpaca</h3>
-        <p class="precio">Precio próximamente</p>
-      </article>
+  <div class="productos">
 
-      <article class="producto">
-        <div class="foto">
-          <span class="sin-foto">Foto próximamente</span>
-        </div>
-        <h3>Mate boca chata de acero</h3>
-        <p class="precio">Precio próximamente</p>
-      </article>
+    <article class="producto">
+      <div class="foto">
+        <img src="bocachata.jpg.HEIC" alt="Mate boca chata de acero">
+      </div>
+      <h3>Mate boca chata de acero</h3>
+      <p class="precio">$ 590</p>
+    </article>
 
-      <article class="producto">
-        <div class="foto">
-          <span class="sin-foto">Foto próximamente</span>
-        </div>
-        <h3>Posa mate con costura</h3>
-        <p class="precio">Precio próximamente</p>
-      </article>
+    <article class="producto">
+      <div class="foto">
+        <img src="camionero.jpg.HEIC" alt="Mate camionero">
+      </div>
+      <h3>Mate camionero</h3>
+      <p class="precio">$ 390</p>
+    </article>
 
-      <article class="producto">
-        <div class="foto">
-          <span class="sin-foto">Foto próximamente</span>
-        </div>
-        <h3>Imperial boca de acero lisa</h3>
-        <p class="precio">Precio próximamente</p>
-      </article>
+    <article class="producto">
+      <div class="foto">
+        <img src="imperial.jpg.HEIC" alt="Mate imperial boca de acero lisa">
+      </div>
+      <h3>Mate imperial boca de acero lisa</h3>
+      <p class="precio">$ 990</p>
+    </article>
 
-      <article class="producto">
-        <div class="foto">
-          <span class="sin-foto">Foto próximamente</span>
-        </div>
-        <h3>Mates camioneros</h3>
-        <p class="precio">Precio próximamente</p>
-      </article>
+    <article class="producto">
+      <div class="foto">
+        <img src="tabla.jpg.HEIC" alt="Set de tabla">
+      </div>
+      <h3>Set de tabla</h3>
+      <p class="precio">$ 1.190</p>
+    </article>
 
-      <article class="producto">
-        <div class="foto">
-          <span class="sin-foto">Foto próximamente</span>
-        </div>
-        <h3>Termo</h3>
-        <p class="precio">Precio próximamente</p>
-      </article>
+    <article class="producto">
+      <div class="foto">
+        <img src="termo.jpg.HEIC" alt="Termo">
+      </div>
+      <h3>Termo</h3>
+      <p class="precio">$ 990</p>
+    </article>
 
-      <article class="producto">
-        <div class="foto">
-          <span class="sin-foto">Foto próximamente</span>
-        </div>
-        <h3>Set de tabla</h3>
-        <p class="precio">Precio próximamente</p>
-      </article>
+    <article class="producto">
+      <div class="foto">
+        <img src="liso.jpg.jpg" alt="Posa mate liso">
+      </div>
+      <h3>Posa mate liso</h3>
+      <p class="precio">$ 290</p>
+    </article>
 
-    </div>
-  </main>
+    <article class="producto">
+      <div class="foto">
+        <img src="costura.jpg.jpg" alt="Posa mate con costura">
+      </div>
+      <h3>Posa mate con costura</h3>
+      <p class="precio">$ 495</p>
+    </article>
 
-  <section class="contacto">
-    <h2>¿Te gustó algún producto?</h2>
-    <p>Comunicate con nosotros y consultanos.</p>
+    <article class="producto">
+      <div class="foto">
+        <img src="bombilla.jpg.WEBP" alt="Bombillón de alpaca">
+      </div>
+      <h3>Bombillón de alpaca</h3>
+      <p class="precio">$ 790</p>
+    </article>
+
+  </div>
+</main>
+
+<section class="contacto">
+  <h2>¿Te gustó algún producto?</h2>
+  <p>Comunicate con nosotros y hacé tu pedido.</p>
+
+  <div class="botones">
     <a href="https://www.instagram.com/labuenacostumbre_/"
        target="_blank">
-      Contactanos
+      Instagram
     </a>
-  </section>
 
-  <footer>
-    <p>La Buena Costumbre</p>
-    <p>Las buenas costumbres se comparten.</p>
-    <p>@labuenacostumbre_</p>
-  </footer>
+    <a href="https://wa.me/598XXXXXXXXX"
+       target="_blank">
+      WhatsApp
+    </a>
+  </div>
+</section>
+
+<footer>
+  <p>La Buena Costumbre</p>
+  <p>Las buenas costumbres se comparten.</p>
+  <p>@labuenacostumbre_</p>
+</footer>
 
 </body>
 </html>
